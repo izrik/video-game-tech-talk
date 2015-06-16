@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>How to make a 3D Video Game</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -40,338 +40,542 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
+
+                <!-- Intro -->
+
+                <section>
+                    <h2>How to Build a Video Game</h2>
+                    <ul>
+                        <li>June 16th, 2015</li>
+                        <li>Richard Sartor</li>
+                        <li>https://github.com/izrik</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>About me</h2>
+                    <ul>
+                        <li>Playing games since 6 or 7</li>
+                        <li>Programming since 12</li>
+                        <li>3D programming since 17</li>
+                        <li>I like to code</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Some approaches</h2>
+                    <ul>
+                        <li>Game Engine</li>
+                        <li>Code it yourself</li>
+                        <li>Hire someone else <span class="fragment">(beyond scope)</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Game Engines</h2>
+                        <p><img src="unity-get-started-cover.jpg"></p>
+                    </section>
+                    <section>
+                        <h2>Game Engines</h2>
+                        <ul>
+                            <li>Off-the-shelf turn-key solution</li>
+                            <li>Nice, user-friendly GUI</li>
+                            <li>Large ecosystem for components and content assets</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Game Engines</h2>
+                        <p>
+                            <img src="Unity_3D_logo.png" style="background-color: #ffffff"/>
+                            <img src="Unreal_Engine_logo_and_wordmark.png"/>
+                            <img src="Source_engine_logo_and_wordmark.svg.png"/>
+                        </p>
+                    </section>
+                </section>
+
+
+                <section>
+                    <p>Instead, let's do it The Hard Way™...</p>
+                </section>
+
+
+                <section>
+                    <h2>How to make a video game</h2>
+                    <ol>
+                        <li>3D Math & Graphics</li>
+                        <li>Character Modelling & Animation</li>
+                        <li>Audio & Music</li>
+                        <li>Input</li>
+                        <li>Game Logic</li>
+                    </ol>
+                </section>
+
+                <!-- 3D M&G -->
+
+                <section>
+                    <h2>3D Math & Graphics</h2>
+                    <ol>
+                        <li>api's</li>
+                        <li>Vectors, Polygons, Meshes</li>
+                        <li>Normal Vectors</li>
+                        <li>Lighting</li>
+                        <li>Types of Lights</li>
+                        <li>Matrices, Transforms</li>
+                        <li>Vertices, Textures, UV Coords</li>
+                        <li>Buffers and Vertex Data</li>
+                        <li>Animations</li>
+                        <li>Graphics Pipeline</li>
+                        <li>Shaders</li>
+                        <li>HUD and 2D</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>3D Graphics API's</h2>
+                    <ul>
+                        <li>DirectX</li>
+                        <li>OpenGL (and now Vulkan)</li>
+                        <li>other: SDL, Metal, etc</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h2>Vectors, Polygons, Meshes</h2>
+                        <ul>
+                            <li>Vector: three coordinates (X,Y,Z) that represent a point in 3D space</li>
+                            <li>Polygon: three (or more) vectors that define a solid region</li>
+                            <li>Mesh: a collection of polygons</li>
+                        </ul>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="vector-3.png"/><br/>Vector</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="polygon-3.png"/><br/>Polygon</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="polygon-3a.png"/><br/>Polygon</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="polygon-3b.png"/><br/>Polygon</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="mesh-1.png"/><br/>Mesh</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="mesh-2.png"/><br/>Mesh</p>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section>
+                        <h2>Normal Vectors</h2>
+                        <ul>
+                            <li>Face normal vectors are orthogonal to a face (polygon)</li>
+                            <li>Vertex normals are associated with a point on the polygon</li>
+                            <li>These vectors are used to calculate lighting and shadow</li>
+                        </ul>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="face-normal.png"/><br/>Face normals</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="vertex-normal.png"/><br/>Vertex normals</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="tree-normals-1.png"/><br/>Both</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="tree-flat-smooth.png"/><br/>Flat vs. Smooth</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Lighting</h2>
+                        <ul>
+                            <li>Diffuse - Typical. Brightness proportional to cosine of angle</li>
+                            <li>Specular - Shiny. Proportional to angle between light and camera</li>
+                            <li>Ambient - Everywhere all the time.</li>
+                            <li>Emissive - All the time, particular to a surface.</li>
+                        </ul>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Lambert2.gif/640px-Lambert2.gif"/>
+                            <br/><small>"Lambert2" by GianniG46 - Own work. Licensed under CC BY-SA 3.0 via Wikimedia Commons - https://commons.wikimedia.org/wiki/File:Lambert2.gif#/media/File:Lambert2.gif</small></p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="640px-Blinn_Vectors.svg.png"/>
+                            <br/></p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="diffuse-spheres.png"/><br/>Diffuse</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="specular-spheres.png"/><br/>Specular</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="ambient-spheres.png"/><br/>Ambient</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="emissive-spheres.png"/><br/>Emissive</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="combined-spheres.png"/><br/>Combined</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Types of Lights</h2>
+                        <ul>
+                            <li>Point - Has a position in space, and shines in all directions. E.g. light bulb.</li>
+                            <li>Specular - No specific position but shines in a particular direction. E.g. the sun.</li>
+                            <li>Spot - Has particular position and direction, and emits a cone of light.</li>
+                        </ul>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="point-light.png"/><br/>Point Light</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="directional-light.png"/><br/>Directional Light</p>
+                    </section>
+                    <section data-transition="none">
+                        <p><img src="spot-light.png"/><br/>Spot Light</p>
+                    </section>
+                </section>
+
+
+
+
+
+
+
+                <section>
+                    <h2>Vectors and Vertices</h2>
+                    <p>Position vectors and normal vectors are related, but distinct. Combine them into a structure that represents a single point, called a "vertex".</p>
+                </section>
+
+
+
+                <section>
+                    <h2>Matrices and Transforms</h2>
+                    <ul>
+                        <li>Matrices are 4x4 arrays of floats. </li>
+                        <li>They can "transform" vectors, changing them through the power of math. </li>
+                        <li>Most common operations are Translation, Rotation, and Scaling.</li>
+                        <li>Matrices can be "multiplied", which combines their effects.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Matrices and Transforms</h2>
+                    <p><img src="identity-matrix.png"/><br/>Identity </p>
+                </section>
+
+                <section>
+                    <h2>Matrices and Transforms</h2>
+                    <p><img src="translation-matrix.png"/><br/>Translation</p>
+                </section>
+
+                <section>
+                    <h2>Matrices and Transforms</h2>
+                    <p><img src="rotation-matrix.png"/><br/>Rotation </p>
+                </section>
+
+                <section>
+                    <h2>Matrices and Transforms</h2>
+                    <p><img src="scale-matrix.png"/><br/>Scaling </p>
+                </section>
+
+                <section>
+                    <h2>Matrices and Transforms</h2>
+                    <ul>
+                        <li>World - transforms the model into its place and orientation in the scene</li>
+                        <li>View - transforms the model into its place relative to the camera</li>
+                        <li>Projection - converts 3D coordinates into 2D screen coordinates</li>
+                    </ul>
+                </section>
+
+
+
+                <section>
+                    <section>
+                        <h2>Textures & UV Coords</h2>
+                        <p>solid colors are boring. Paint a picture on the model itself.</p>
+                    </section>
+                    <section>
+                        <h2>Textures & UV Coords</h2>
+                        <p><img src="model-solid.png"></p>
+                    </section>
+                    <section>
+                        <h2>Textures & UV Coords</h2>
+                        <p><img src="model-textured.png"></p>
+                    </section>
+                    <section>
+                        <h2>Textures & UV Coords</h2>
+                        <p>Add new components to the vertex structure: Texture (or "UV") coordinates.</p>
+                    </section>
+                    <section>
+                        <h2>Textures & UV Coords</h2>
+                        <p><img src="uv-mapping-screenshot.png"></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Buffers and Vertex Data</h2>
+                        <p>Vertices are arranged in large buffers (arrays) in GPU memory.
+                        You can have one buffer of all vertex components, or a buffer for each vertex component separately, or some combination.
+                            Every buffer must have the same number of elements.
+                    </section>
+                    <section>
+                        <h2>Buffers and Vertex Data</h2>
+                    <p><img src="single-vertex-buffer.png"><br/><img src="multi-vertex-buffer.png"></p>
+                    </section>
+                    <section>
+                        <h2>Index Buffers</h2>
+                        <p>Instead of duplicating shared vertices, another buffer, called an index buffer, will store indexes into the vertex buffer(s)<br/>
+                        <img src="index-buffer.png"/></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Animations</h2>
+                        <p>Also called "Skinning".</p>
+                        <p>Hierarchical bones - each bone affects part of the mesh, a subset of the vertices</p>
+                        <p>Each bones affects part of the whole mesh</p>
+                    </section>
+                    <section>
+                        <h2>Animations</h2>
+                        <p>Each vertex stores a list of bone indexes and bone weights (additional vertex components, requires more space in the vertex buffer).</p>
+                        <p>Weights all add up to one.</p>
+                        <p>Each bone has its own transform, which is then multiplied by the parent</p>
+                        <p>Vertices are effectively transformed from model-space back into model-space, so they can then be transformed by the World matrix as usual.</p>
+                    </section>
+                    <section>
+                        <h2>Animations</h2>
+                        <p><img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Sintel-hand.png">
+                            <br/><small>"Sintel-hand" by © copyright Blender Foundation / www.sintel.org. Licensed under CC BY-SA 3.0 via Wikimedia Commons - https://commons.wikimedia.org/wiki/File:Sintel-hand.png#/media/File:Sintel-hand.png</small></p>
+                    </section>
+                    <section>
+                        <h2>Animations</h2>
+                        <p><img src="ninja-bones.png"></p>
+                    </section>
+
+
+
+
+
+                </section>
+
+                    <section>
+                        <h2>Graphics Pipeline</h2>
+                        <p>All of the steps needed to turn input vertices and polygons into colored, textured, shaded pixels on the screen.</p>
+                        <ul>
+                            <li>Input geometry (vertices and polygons)</li>
+                            <li>Tessellation</li>
+                            <li>Rasterization</li>
+                            <li>Color, Texture, and Lighting</li>
+                            <li>Output pixels</li>
+                        </ul>
+                    </section>
+
+                <section>
+                    <h2>Then: Fixed Pipeline</h2>
+                    <p><img src="https://www.khronos.org/assets/uploads/apis/opengles_1x_pipeline.gif">
+                    <br/><small>Khronos Group https://www.khronos.org/opengles/2_X/</small></p>
+                </section>
+
+                <section>
+                    <h2>Now: Programmable Pipeline</h2>
+                    <p><img src="https://www.khronos.org/assets/uploads/apis/opengles_20_pipeline2.gif">
+                        <br/><small>Khronos Group https://www.khronos.org/opengles/2_X/</small></p>
+                </section>
+
+                    <section>
+                        <h2>Shaders</h2>
+                        <p>Self-contained programs that can be run directly on the GPU</p>
+                        <p>Operate on 3D data, vertices, polygons, pixels.</p>
+                        <p>Written in C-like languages, HLSL and GLSL</p>
+                    </section>
+
+                <section>
+                    <h2>Shaders</h2>
+                    <p>Can do things like:</p>
+                    <ul>
+                        <li>Define custom lighting types</li>
+                        <li>Color dependent on position</li>
+                        <li>Generate procedural geometry on-the-fly (hair, fur, etc)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Cel shading</h2>
+                    <p>A cartoon-like appearance</p>
+                    <p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Celshading_teapot_large.png">
+                        <br/><small>"Celshading teapot large" by User:NicolasSourd - Own work. Licensed under CC BY 2.5 via Wikimedia Commons - https://commons.wikimedia.org/wiki/File:Celshading_teapot_large.png#/media/File:Celshading_teapot_large.png</small></p>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Shadow Maps</h2>
+                        <p><img src="shader-highlight.png"></p>
+                    </section>
+                    <section>
+                        <h2>Shadow Maps</h2>
+                        <p><img src="view-from-light-depth.png"></p>
+                    </section>
+                </section>
+                <section>
+                    <h2>Examples Abound</h2>
+                    <ul>
+                    <li>http://glslsandbox.com/</li>
+                    <li>http://www.lighthouse3d.com/tutorials/glsl-tutorial/shader-examples/</li>
+                    <li>https://www.opengl.org/wiki/Geometry_Shader_Examples</li>
+                    </ul>
+                </section>
+                <section>
+                    <section>
+                        <h2>HUD and 2D</h2>
+                        <p>We still have a use for 2D. Drawing text on screen, icons, etc.<br/>
+                        <img src="hud.png"></p>
+                    </section>
+                </section>
+
+
+                <!-- ChModel&Anim -->
+
+                <section>
+                    <h2>Character Modelling & Animation</h2>
+                    <p>Hand-coding all vectors, triangles, and meshes would be painfully tedious. Using a 3D content creation workflow using a modelling package is better. Also, it allows people with a different skill set to contribute.</p>
+                </section>
+
+                <section>
+                    <h2>3D Modelling Software</h2>
+                    <p>
+                        <img src="3ds-max-2015-banner-lockup-264x66.png"><br/>
+                        <img src="maya-2015-banner-lockup-223x66.png"><br/>
+                        <img src="blender-socket.png"><br/>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Blender</h2>
+                    <p>
+                        <img src="blender-troublemakers-ninja.png"><br/>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>File Formats</h2>
+                    <ul>
+                        <li>Fbx - proprietary, binary of ascii, SDK</li>
+                        <li>Collada - designed by Khronos, XML based</li>
+                        <li>Modeller-specific</li>
+                    </ul>
+                </section>
+
+                <!-- Audio -->
+
+                <section>
+                    <h2>Audio & Music</h2>
+                    <p>Just like in graphics programming, there exist audio API's for accessing the hardware to play sound effects and music in a hardware-independent way. Several different file formats can be used as well.</p>
+                </section>
+
+                <section>
+                    <h2>Audio API's</h2>
+                    <ol>
+                        <li>DirectX - Windows Only</li>
+                        <li>OpenAL - Formerly open, now proprietary. There are open-source implementations, though.</li>
+                        <li>Platform specific API's - Not portable</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Audio File Formats</h2>
+                    <ol>
+                        <li>WAV - generic container format. Usually raw PCM audio samples</li>
+                        <li>MP3 - advanced compression format targeted to human hearing. Great compression ratio, but typically requires license</li>
+                        <li>Ogg Vorbis - open source competitor to MP3, not constrained by patents</li>
+                    </ol>
+                </section>
+
+                <!-- Input -->
+
+                <section>
+                    <h2>Input</h2>
+                    <ol>
+                        <li>keyboards, mice, gamepads, joysticks</li>
+                        <li>buttons (binary, on/off)</li>
+                        <li>axes (integer or float)</li>
+                    </ol>
+                </section>
+
+                <!-- Game Logic -->
+
+                <section>
+                    <h2>Game Logic</h2>
+                    <ol>
+                        <li>game loop</li>
+                        <li>draw/update cycle</li>
+                        <li>physics</li>
+                        <li>ai</li>
+                    </ol>
+                </section>
+
+
+                <section>
+                    <h2>Game Loop</h2>
+                    <p>At its core, a game is just an endless while loop. For each frame, the game needs to:</p>
+                    <ul>
+                        <li>Get input from the user</li>
+                        <li>Respond to the input</li>
+                        <li>Update the game world</li>
+                        <li>Draw the screen</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>The Draw/Update cycle</h2>
+                    <p>Most of the loop is divided into two sections: Draw and Update.</p>
+                    <p>Draw renders all the </p>
+                    <ol>
+                        <li>game loop</li>
+                        <li>draw/update cycle</li>
+                        <li>physics</li>
+                        <li>ai</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Physics</h2>
+                    <p>Update objects. Simulate accurate gravity, acceleration, velocity, collisions, etc.</p>
+                    <p>Can be hardware-accelerated</p>
+                </section>
+
+                <section>
+                    <h2>AI</h2>
+                    <p>Computer controlled characters.</p>
+                    <p>Behavior Trees</p>
+                </section>
+
+
+
+                <!-- fin -->
+
 
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+					<h1>The End</h1>
+					<p>See my game-in-progress here:<br/>
+                        <a href="http://troublemakers.izrik.com">http://troublemakers.izrik.com</a>
 					</p>
 				</section>
 

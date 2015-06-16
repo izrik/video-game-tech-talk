@@ -1,0 +1,50 @@
+brainstorm
+==========
+
+intro
+    engines
+    apis
+
+3d math & graphics
+    apis (directx, opengl)
+    vectors, vertices, polygons, meshes
+    matrices, transforms
+    textures, uv coords
+    buffers and vertex data
+    animations
+    graphics pipeline
+    shaders
+        vertex and fragment/pixel
+        geometry/tessellation
+        advanced effects
+        - cel shading
+        - shadow mapping
+        - normal mapping
+        - skinning & animation
+            bind pose
+    hud and 2d
+
+character modelling & animation
+    content creation
+    software (3ds, maya, blender, etc)
+    import/export
+    file formats (fbx, collada, etc)
+
+audio & music
+    directx, openal
+    file formats
+        wav
+        mp3
+        ogg
+
+input
+    keyboards, mice, gamepads, joysticks
+    buttons (binary, on/off)
+    axes (integer or float)
+
+implementing game logic
+    game loop
+    draw/update cycle
+    physics
+    ai
+
